@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block body %}
-<form action="greet" method="GET">
-    <input type="text" name="user_name">
-    <input type="submit">
-</form>
+<ol>
+    {% for user in users %}
+    <li>{{ user }}</li>
+    {% endfor %}
+</ol>
+<a href="{% url 'add' %}">добавить пользователя</a>
 {% endblock %}
